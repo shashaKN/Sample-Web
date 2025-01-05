@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Website for Google Analytics</title>
+    
+    <!-- Google Analytics Tracking Code -->
+    <!-- Replace 'UA-XXXXXXXXX-X' with your own Google Analytics Tracking ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-XXXXXXXXX-X');  // Replace with your GA tracking ID
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+            margin: 10px;
+            background-color: white;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Sample Website</h1>
+    </header>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>This is a simple website where you can practice Google Analytics.</p>
+        <p>Click the button below to generate an event.</p>
+        <button onclick="trackEvent()">Click Me!</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Sample Website. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to track an event when the button is clicked
+        function trackEvent() {
+            gtag('event', 'button_click', {
+                'event_category': 'button',
+                'event_label': 'Click Me Button'
+            });
+            alert('Button click event tracked!');
+        }
+    </script>
+</body>
+</html>
